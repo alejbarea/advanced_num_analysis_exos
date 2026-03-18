@@ -1,18 +1,6 @@
 import numpy as np
 
 def is_upper_hessenberg(matrix: np.ndarray) -> bool:
-    """
-    Check if the given matrix is an upper Hessenberg matrix.
-
-    An upper Hessenberg matrix is a square matrix where all entries below the first subdiagonal are zero.
-    In other words, for a matrix A, A[i, j] = 0 for all i > j + 1.
-
-    Parameters:
-    matrix (np.ndarray): The input matrix to check.
-
-    Returns:
-    bool: True if the matrix is an upper Hessenberg matrix, False otherwise.
-    """
     rows, cols = matrix.shape
     for i in range(rows):
         for j in range(cols):
@@ -35,7 +23,7 @@ def hessqr(matrix: np.ndarray):
         raise ValueError("Input must be an upper Hessenberg matrix.")
     n = matrix.shape[0]
     R = matrix.astype(float).copy()
-    Q_T = np.eye(n) # Initialize Q as the identity matrix
+    Q_T = np.eye(n) 
     for k in range(n - 1):
         a = R[k, k]
         b = R[k + 1, k]
